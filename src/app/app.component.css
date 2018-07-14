@@ -1,0 +1,13 @@
+.navbar {
+  background: rgba(0, 15, 30, 1);
+  height: 100%;
+  color: #fff;
+}
+
+.page {
+  padding: 20px 0px;
+}
+
+#page-background {
+  background: radial-gradient(#dddddd, #ffffff);
+}

@@ -1,0 +1,29 @@
+<div class="row justify-content-center base">
+  <div class="col-6 align-self-center login-box">
+    <div [formGroup]="form" class="row justify-content-center">
+      <div class="col-8">
+        <input type="text" placeholder="Email" formControlName="login" class="login-input" [ngClass]="{
+          'has-danger': error,
+          'has-success': form.controls.login.valid && form.controls.login.dirty && !error
+        }">
+      </div>
+      <div class="col-8">
+        <input type="password" placeholder="Senha" formControlName="password" class="login-input" [ngClass]="{
+          'has-danger': error,
+          'has-success': form.controls.password.valid && form.controls.password.dirty && !error
+        }">
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 error" *ngIf="error" >
+        Usuário não existe. <br> Tente novamente ou faça um novo cadastro.
+      </div>
+      <div class="col-6">
+        <button (click)="submit()" style="transition: all .2s ease;" [ngClass]="{'loading' : loading, 'login-button' : !loading}"></button>
+      </div>
+      <div class="col-12 sign-up-link">
+        <a class="sign-up" routerLink="/sign-up" routerLinkActive="active">Cadastre-se</a>
+      </div>
+    </div>
+  </div>
+</div>

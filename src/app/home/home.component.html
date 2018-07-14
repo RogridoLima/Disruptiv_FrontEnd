@@ -1,0 +1,21 @@
+<div class="row no-gutters justify-content-center base">
+  <div class="col-8 align-self-center login-box">
+    <div class="info-header">
+          Relatório tabular
+    </div>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>User Id</th>
+        <th>Title</th>
+        <th>Body</th>
+      </tr>
+      <tr *ngFor="let item of data" >
+        <td>{{ item.id }}</td>
+        <td>{{ item.userId }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.body }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

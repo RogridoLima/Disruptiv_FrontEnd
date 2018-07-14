@@ -1,32 +1,27 @@
-# Teste para candidatos à vaga de dev Front-end
+# DisruptivTeste
 
-Esse teste é público. Todos que os interessados que fizerem pull request receberão um feedback da equipe Disruptiv
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-### Instruções:
-1.  Faça um fork deste repositório;
-2.  Utilize a tecnologia de front de sua preferência (Angular, React, Vue);
-3.  Preocupe-se em desenvolver algo funcional e clean;
-4.  Para a interação do formulário utilize preferencialmente angularjs e/ou jQuery;
-5.  Após terminar seu teste submeta um pull request e aguarde seu feedback;
-6.  O prazo de entrega do teste é de até 2 dias, portanto faça o que for suficiente dentro do tempo estimado;
+## Development server
 
-### Esperamos que você:
--   Minifique seu css e deixe-o na pasta "css";
--   Minifique seu javascript e deixe-o na pasta "js";   
--   Faça commit também dos arquivos não minificados;
-    
-### Ganhe pontos extras por:
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
--   Ter um código clean;
--   **Validar os inputs do seu formulário** antes de habilitar o botão de envio;
--   Utilizar animações para o scroll da página.
--   Animações no load/click (loading...)
+## Code scaffolding
 
-### O Teste:
-O teste consiste na criação do layout de um sistema com 3 páginas, sendo elas:
-- Login (Não é necessário autenticar em nenhum local)
-- Relatório tabular (o relatório deverá se conectar à qualquer API pública de sua preferência retornando dados para seu relatório) (exemplos podem ser utilizados daqui: https://jsonplaceholder.typicode.com/)
-- Cadastro (com pelo menos 5 itens, contendo listas, selects, combobox, input de texto, upload de imagem (Drag and Drop), importante demonstrar habilidades de CSS, HTML e JavaScript.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-**Boa Sorte !**
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

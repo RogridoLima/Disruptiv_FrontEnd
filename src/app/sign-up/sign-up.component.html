@@ -1,0 +1,173 @@
+<div class="row justify-content-center base">
+  <div class="col-8 align-self-center login-box">
+
+    <div [formGroup]="form">
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.name.invalid && form.controls.name.dirty || error}">
+              Nome:
+            </div>
+            <div class="col-8">
+              <input type="text" placeholder="João Pedro..." formControlName="name" class="login-input" [ngClass]="{
+          'has-danger': form.controls.name.invalid && form.controls.name.dirty,
+          'has-success': form.controls.name.valid && form.controls.name.dirty
+        }">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.email.invalid && form.controls.email.dirty || error}">
+              Email:
+            </div>
+            <div class="col-8">
+              <input type="email" placeholder="exemplo@email.com" formControlName="email" class="login-input" [ngClass]="{
+              'has-danger': form.controls.email.invalid && form.controls.email.dirty,
+              'has-success': form.controls.email.valid && form.controls.email.dirty
+            }">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.pass.invalid && form.controls.pass.dirty || passwordDoesntMatch}">
+              Senha:
+            </div>
+            <div class="col-8">
+              <input type="password" placeholder="*****" formControlName="pass" class="login-input" [ngClass]="{
+              'has-danger': form.controls.pass.invalid && form.controls.pass.dirty || passwordDoesntMatch,
+              'has-success': form.controls.pass.valid && form.controls.pass.dirty || passwordDoesntMatch
+            }">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.confirmPass.invalid && form.controls.confirmPass.dirty || passwordDoesntMatch}">
+              Confirme sua senha:
+            </div>
+            <div class="col-8">
+              <input type="password" placeholder="*****" formControlName="confirmPass" class="login-input" [ngClass]="{
+              'has-danger': form.controls.confirmPass.invalid && form.controls.confirmPass.dirty || passwordDoesntMatch,
+              'has-success': form.controls.confirmPass.valid && form.controls.confirmPass.dirty || passwordDoesntMatch
+            }">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.birth.invalid && form.controls.birth.dirty || error}">
+              Nascimento:
+            </div>
+            <div class="col-8">
+              <input type="date" formControlName="birth" class="login-input" [ngClass]="{
+              'has-danger': form.controls.birth.invalid && form.controls.birth.dirty,
+              'has-success': form.controls.birth.valid && form.controls.birth.dirty
+            }">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.gender.invalid && form.controls.gender.dirty || error}">
+              Sexo:
+            </div>
+            <div class="col-8">
+              <select formControlName="gender" class="login-input" [ngClass]="{
+              'has-danger': form.controls.gender.invalid && form.controls.gender.dirty,
+              'has-success': form.controls.gender.valid && form.controls.gender.dirty
+            }">
+                <option selected="selected" value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : errorSelect || error}" >
+              Passatempo (duas ou mais):
+            </div>
+            <div class="col-8">
+              <div class="row">
+                <div class="col-6" *ngFor="let item of hobbies">
+                  <input type="checkbox" id="item.name" [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}" class="login-input">
+                  <label for="item.name">{{item.name}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : form.controls.bio.invalid && form.controls.bio.dirty || error}">
+              Bio:
+            </div>
+            <div class="col-8">
+              <textarea formControlName="bio" class="login-input" [ngClass]="{
+            'has-danger': form.controls.bio.invalid && form.controls.bio.dirty,
+            'has-success': form.controls.bio.valid && form.controls.bio.dirty
+          }"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row item">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4 align-self-center label" [ngClass]="{'error-select' : errorPicture || error}">
+              Foto:
+            </div>
+            <div class="col-8">
+              <img [src]="url" height="200px" *ngIf="url !== ''">
+              <br/>
+              <input type='file' (change)="onSelectFile($event)">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center" *ngIf="success" >
+      <div class="col-10 success">
+        Usuario criado com sucesso!<br>
+        Você será redirecionado para o login automaticamente.
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <button (click)="submit()" style="transition: all .2s ease;" [ngClass]="{'loading' : loading, 'login-button' : !loading}"></button>
+      </div>
+    </div>
+  </div>
+</div>
