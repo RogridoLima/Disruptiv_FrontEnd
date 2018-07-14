@@ -9,14 +9,17 @@ export class User {
   picture: string;
   password: string;
 
-  constructor(obj: any) {
-    this.name = obj.name;
-    this.email = obj.email;
-    this.birth = obj.birth;
-    this.gender = obj.gender;
-    this.hobbies = obj.hobbies;
-    this.bio = obj.bio;
-    this.picture = obj.picture;
-    this.password = obj.password;
+  constructor(obj?: any) {
+    if (obj) {
+      this.name = obj.name;
+      this.email = obj.email;
+      this.birth = obj.birth;
+      this.gender = obj.gender;
+      this.hobbies = obj.hobbies;
+      this.bio = obj.bio;
+      this.picture = obj.picture;
+      this.password = obj.password;
+    }
+
   }
 }

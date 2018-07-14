@@ -115,7 +115,7 @@ export class SignUpComponent implements OnInit {
       if (this.form.valid) {
 
         // cria o usuario e salva no localstorage para fazer o login
-        const user = new User(null);
+        const user = new User();
         const form = this.form.value;
 
         user.name = form.name;
@@ -127,7 +127,6 @@ export class SignUpComponent implements OnInit {
         user.hobbies = form.hobbies;
         user.password = form.pass;
 
-        console.log(user);
         localStorage.setItem('user', JSON.stringify(user));
 
         this.success = true;

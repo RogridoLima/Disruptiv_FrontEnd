@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
         const data = new Data(jsonResponse[i]);
         this.data.push(data);
       }
-      console.log(this.data);
     });
   }
 

@@ -33,12 +33,10 @@ export class LoginComponent implements OnInit {
 
         // pega os dados do form
         const form = this.form.value;
-        console.log(form.login, form.password, userSaved);
 
         // checa o login e se for verdadeiro manda pra home
         if (form.login === userSaved.email && form.password === userSaved.password) {
           this.error = false;
-          console.log('foi');
           this.router.navigate(['home']);
         } else {
           this.validateAllFormFields(this.form);
